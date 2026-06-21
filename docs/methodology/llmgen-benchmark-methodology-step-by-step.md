@@ -78,7 +78,7 @@ Result: 22,359 tracked files across the repository
 - `use-case-analysis/` → 29 project directories (each = 1 use-case analysis)
 - `greenfield-analysis/` → 25 project directories (each = 1 full operator, LLMGen SDLC)
 - `brownfield-analysis/` → 54 directories (27 base + 27 analysis), with 19 addon feature sets
-- `brownfield-analysis/` includes 3rd-party fork management: DR-Containers, YAAG-Core, ACM-Engine (unvendored OSS with no vendor support, managed via LLMGen brownfield + addon workflows)
+- `brownfield-analysis/` includes 3rd-party fork management: unvendored open-source infrastructure forks (no vendor support, managed via LLMGen brownfield + addon workflows)
 - `devops-e2e/` → 2 projects (data mesh-level Tier 3 integration testing via LLMGen DevOps E2E workflow)
 
 ### Step 2: Requirement Extraction

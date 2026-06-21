@@ -303,7 +303,7 @@ graph TD
 | **Template system with versioning** | process_templates → versions → parameters → step_configs → step_bindings | Fixed workflow per tool |
 | **Debug-before-release** | Full step-by-step execution engine before templates go production | No equivalent |
 | **DevOps artifact generation** | Helm charts, Dockerfiles, CI/CD pipelines as greenfield projects | Not generated |
-| **Infrastructure component management** | Brownfield analysis of forked OSS (DR-Containers, Strimzi) | Not supported |
+| **Infrastructure component management** | Brownfield analysis of forked OSS (unvendored infrastructure forks) | Not supported |
 
 ---
 
