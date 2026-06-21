@@ -11,15 +11,15 @@
 The order matters — each step creates a link that the next step references.
 
 ```
-Step 1: GitHub repository (creates permanent links)
+Step 1: GitHub repository (creates permanent links)              ✅ DONE
    ↓
-Step 2: arXiv paper (references GitHub repo)
+Step 2: TechRxiv / SSRN (no endorsement, gets DOI in 24-48h)   → DO NOW
+   ↓   (arXiv when endorser found — highest prestige)
+Step 3: LinkedIn article (references DOI + GitHub)
    ↓
-Step 3: LinkedIn article (references arXiv + GitHub)
+Step 4: Dev.to / Hashnode (references DOI + GitHub)
    ↓
-Step 4: Dev.to / Hashnode (references arXiv + GitHub)
-   ↓
-Step 5: Reddit (references arXiv + GitHub + LinkedIn)
+Step 5: Reddit (references DOI + GitHub + LinkedIn)
    ↓
 Step 6: X/Twitter thread (references all above)
 ```
@@ -82,46 +82,63 @@ If ANY match is found, fix it before pushing.
 
 ---
 
-## Step 2: arXiv Paper
+## Step 2: Academic Preprint (3 options — do TechRxiv first, arXiv if endorsed)
 
-**When:** After GitHub repo is live (same day or next day).  
-**Time needed:** 1-2 hours (formatting + submission)  
-**URL will be:** `arxiv.org/abs/26XX.XXXXX`
+You have three platforms. **TechRxiv is recommended first** because it requires no endorsement and publishes in 24-48 hours. arXiv requires an endorser for first-time authors.
 
-### Instructions:
+### Option A: TechRxiv (RECOMMENDED FIRST — no endorsement needed)
 
-1. Go to https://arxiv.org/user/register (if no account)
-2. Start new submission: https://arxiv.org/submit
-3. **Category:** `cs.SE` (Software Engineering) — primary. Cross-list: `cs.AI`
-4. **Title:** "Beyond SWE-bench: Benchmarking AI-Driven Platform Engineering at SDLC Scale"
-5. **Authors:** Roman Agaev
-6. **Abstract:** Copy from the paper (first 200 words)
+**When:** Same day as GitHub.  
+**Time needed:** 30 minutes  
+**URL will be:** `techrxiv.org/doi/...` with a permanent DOI  
+**Full instructions:** See `techrxiv-submission.md` in this folder.
 
-### Format requirements:
+Quick steps:
+1. Go to https://www.techrxiv.org → "Submit a Preprint"
+2. Sign in with IEEE account (free to create)
+3. Title: "Beyond SWE-bench: Benchmarking AI-Driven Platform Engineering at SDLC Scale"
+4. Author: Roman Agaev, Independent Researcher
+5. Abstract: copy from `techrxiv-submission.md`
+6. Categories: Software Engineering (primary), AI (secondary)
+7. License: CC BY 4.0
+8. Upload `paper.pdf` (already generated at `llmgen-benchmark/docs/paper.pdf`)
+9. Add GitHub repo link as supplementary material
+10. Submit — publishes in **24-48 hours** with DOI
 
-arXiv accepts PDF. Convert the markdown paper to PDF:
+### Option B: SSRN (alternative — also no endorsement)
 
-Option A — Use Pandoc:
-```bash
-pandoc docs/paper.md -o llmgen-benchmark-paper.pdf --pdf-engine=xelatex -V geometry:margin=1in
-```
+**When:** Same day as TechRxiv or as backup.  
+**Time needed:** 30 minutes  
+**URL will be:** `ssrn.com/abstract=XXXXXXX`  
+**Full instructions:** See `ssrn-submission.md` in this folder.
 
-Option B — Use a LaTeX template:
-- Convert markdown to LaTeX using pandoc: `pandoc docs/paper.md -o paper.tex`
-- Use the `article` or `IEEEtran` document class
-- Compile with `pdflatex paper.tex`
+Quick steps:
+1. Go to https://www.ssrn.com → "Submit a Paper"
+2. Network: CompSciRN (Computer Science)
+3. Same title, abstract, keywords
+4. Upload `paper.pdf`
+5. Publishes in **24-72 hours**
 
-Option C — Use Overleaf:
-- Go to https://overleaf.com
-- Create new project → paste content → compile to PDF
+### Option C: arXiv (highest prestige — requires endorsement)
 
-7. Upload the PDF
-8. Submit — arXiv reviews in 1-3 business days, then assigns a permanent ID
-9. Once published, update GitHub README with the arXiv link
+**When:** After you find an endorser.  
+**Time needed:** 1-2 hours  
+**URL will be:** `arxiv.org/abs/26XX.XXXXX`  
+**Barrier:** First-time authors in `cs.SE` need an endorser (someone who has published on arXiv).
 
-### Update GitHub after arXiv:
+Steps:
+1. Register at https://arxiv.org/user/register (done)
+2. You'll need endorsement for `cs.SE` — arXiv will show you instructions
+3. **How to find an endorser:**
+   - Post paper on TechRxiv/SSRN first → share on Reddit/LinkedIn → researchers who find it valuable may offer
+   - Reach out to authors of SWE-bench or Ship-Bench papers — they may endorse a relevant contribution
+   - Ask the Deloitte contact (Arfan Rahman) if he knows any arXiv-published researchers
+4. Once endorsed: submit PDF, category `cs.SE`, cross-list `cs.AI`
+5. arXiv reviews in 1-3 business days
 
-Replace `[arXiv paper link]` in README.md with the actual arXiv URL.
+### After any academic publication:
+
+Update all link placeholders in GitHub README, LinkedIn article, Dev.to post, Reddit post, and X/Twitter thread with the DOI or preprint URL.
 
 ---
 
@@ -258,15 +275,18 @@ Before publishing ANYTHING, verify:
 
 ## Recommended Timeline
 
-| Day | Action |
-|-----|--------|
-| **Day 1 (Mon/Tue)** | Create GitHub repo, push code, add topics/release |
-| **Day 1** | Submit arXiv paper (takes 1-3 days to process) |
-| **Day 3-4 (Wed/Thu)** | arXiv should be live; publish LinkedIn article |
-| **Day 3-4** | Publish Dev.to + Hashnode posts |
-| **Day 4-5 (Thu/Fri)** | Post on Reddit (r/MachineLearning, r/ChatGPTCoding) |
-| **Day 4-5** | Post X/Twitter thread |
-| **Day 7+** | Monitor engagement, respond to comments, share across platforms |
+| Day | Action | Status |
+|-----|--------|--------|
+| **Day 1 (Today)** | GitHub repo live, topics added, release created | DONE |
+| **Day 1** | Submit TechRxiv (24-48h to publish, no endorsement) | DO NOW |
+| **Day 1** | Submit SSRN (24-72h, backup academic channel) | Optional |
+| **Day 2-3** | TechRxiv live with DOI; update all links | Wait for DOI |
+| **Day 2-3 (Tue/Wed)** | Publish LinkedIn article (with DOI link) | Best on Tue-Wed AM |
+| **Day 2-3** | Publish Dev.to + Hashnode posts | Same day as LinkedIn |
+| **Day 3-4 (Wed/Thu)** | Post on Reddit (r/MachineLearning, r/ChatGPTCoding) | 9-11 AM EST |
+| **Day 3-4** | Post X/Twitter thread | Same day as Reddit |
+| **Day 7+** | Monitor, respond, amplify, seek arXiv endorser | Ongoing |
+| **When endorsed** | Submit to arXiv (highest prestige) | When ready |
 
 ---
 
