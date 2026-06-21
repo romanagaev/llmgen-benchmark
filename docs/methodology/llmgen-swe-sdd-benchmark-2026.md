@@ -4,7 +4,7 @@
 **Date:** 2026-06-13
 **Author:** Roman Agaev (roman.agaev@zhiongroup.com)
 **Status:** Verified, Evidence-Based Assessment
-**Data Sources:** platform-analysis repository ([internal repository] — the data management platform platform), Cursor billing export
+**Data Sources:** platform-analysis repository ([internal repository] — the target platform platform), Cursor billing export
 **Verification:** Claims independently verified (see Appendix C)
 
 ---
@@ -149,7 +149,7 @@ This document provides an empirical benchmark of LLMGen (Tier 1 — Cursor IDE +
 
 **Key Finding:** LLMGen Tier 1 operates at a scope that no existing benchmark fully captures. SWE-bench measures single-issue resolution; SDD benchmarks (Ship-Bench, SpecBench) measure single-feature workflows. LLMGen produces entire platform systems. We therefore construct a **composite benchmark** that maps LLMGen's output to equivalent SWE-bench/SDD units for fair comparison.
 
-**Context:** The system under development is the **the data management platform** (a production Kubernetes-native data mesh platform) — a production enterprise data mesh platform. LLMGen SDLC is a new AI software engineering system lifecycle purpose-built for this class of work: it orchestrates the entire journey from use-case analysis through deployment-ready artifacts using structured, multi-step workflows with human-coordinated parallelism. The benchmark measures LLMGen SDLC's effectiveness during the development of the data management platform.
+**Context:** The system under development is the **the target platform** (a production Kubernetes-native platform (25+ microservices)) — a production enterprise platform. LLMGen SDLC is a new AI software engineering system lifecycle purpose-built for this class of work: it orchestrates the entire journey from use-case analysis through deployment-ready artifacts using structured, multi-step workflows with human-coordinated parallelism. The benchmark measures LLMGen SDLC's effectiveness during the development of the target platform.
 
 ---
 
@@ -158,7 +158,7 @@ This document provides an empirical benchmark of LLMGen (Tier 1 — Cursor IDE +
 ### 2.1 Primary Data
 | Source | Description | Verifiability |
 |--------|-------------|---------------|
-| Git repository (platform-analysis) | the data management platform platform development: 1,350 commits, 22,359 tracked files | `git log`, `git ls-files` — fully auditable |
+| Git repository (platform-analysis) | the target platform platform development: 1,350 commits, 22,359 tracked files | `git log`, `git ls-files` — fully auditable |
 | Cursor billing CSV | 11,139 API requests, $12,984 total cost (Feb 1 – Jun 13, 2026) | Exported from Cursor team billing, included in this folder |
 | Repository structure | 29 use-case analyses, 25 greenfield projects, 54 brownfield projects (incl. 19 addon sets) | Directory enumeration |
 
@@ -352,7 +352,7 @@ SWE-AGI measures 10³–10⁴ LOC system construction from specifications.
 
 ### 6.3 Cost-Efficiency Analysis
 
-**Important framing:** The $12,984 Cursor billing reflects the primary operator's **total AI usage across two repositories** during this period: platform-analysis (the data management platform platform, 69.3% of commits) and llm-generation-design (LLMGen platform itself, 30.7%). Therefore:
+**Important framing:** The $12,984 Cursor billing reflects the primary operator's **total AI usage across two repositories** during this period: platform-analysis (the target platform platform, 69.3% of commits) and llm-generation-design (LLMGen platform itself, 30.7%). Therefore:
 
 - **Roman's AI cost attributed to platform-analysis: ~$9,000** (69.3% of $12,984, by commit ratio across repos)
 - **Roman's LOC share of platform-analysis: 44.1%** (11.5M insertions out of 26M total insertions)
@@ -436,7 +436,7 @@ Cost-efficiency metrics below use the **estimated total team AI cost** (~$20K) �
 | **Scale** | Strong | 44 features, 6.8M LOC, $12,984 cost — sufficient sample size |
 | **Duration** | Strong | 117 days (16.7 weeks) — not a one-off experiment |
 | **Single-operator** | Both strength and limitation | Controls for consistency but limits generalizability |
-| **Real-world complexity** | Strong | Production Kubernetes operators for the data management platform (enterprise data mesh platform) |
+| **Real-world complexity** | Strong | Production Kubernetes operators for the target platform (enterprise platform) |
 | **Cost transparency** | Strong | Full billing export with per-request granularity |
 
 ### 8.2 Limitations & Threats to Validity
@@ -511,15 +511,15 @@ Cost-efficiency metrics below use the **estimated total team AI cost** (~$20K) �
 
 3. **The benchmark is sufficiently objective for publication** with the stated limitations. The data is verifiable, the methodology is transparent, and the sample size is adequate. Full objectivity would require independent evaluation and head-to-head comparison on identical requirements.
 
-4. **LLMGen's key differentiator is not model quality (it uses the same Claude Opus family that powers other tools) but its SDLC system** — LLMGen SDLC is a new AI software engineering system lifecycle that orchestrates structured workflows (11–14 steps per workflow), enables human-coordinated parallelism (3–5 projects simultaneously), and enforces standards compliance on every artifact. It manages three development routes: greenfield operators, brownfield addons to analyzed codebases, and 3rd-party open-source forks (e.g., DR-Containers, Strimzi) that have no vendor support — all through the same structured lifecycle. The the data management platform platform (25 operators, 6.8M LOC) was built entirely using LLMGen SDLC.
+4. **LLMGen's key differentiator is not model quality (it uses the same Claude Opus family that powers other tools) but its SDLC system** — LLMGen SDLC is a new AI software engineering system lifecycle that orchestrates structured workflows (11–14 steps per workflow), enables human-coordinated parallelism (3–5 projects simultaneously), and enforces standards compliance on every artifact. It manages three development routes: greenfield operators, brownfield addons to analyzed codebases, and 3rd-party open-source forks (e.g., open-source infrastructure forks) that have no vendor support — all through the same structured lifecycle. The the target platform platform (25 operators, 6.8M LOC) was built entirely using LLMGen SDLC.
 
 ---
 
 ## 11. Sources
 | Source | Type | URL/Location |
 |--------|------|-------------|
-| platform-analysis repository | Primary data (the data management platform platform) | [internal repository] |
-| Cursor billing export | Primary data | `docs/comparisons/cursor-usage-billing-2026-02-to-06.csv` |
+| platform-analysis repository | Primary data (the target platform platform) | [internal repository] |
+| Cursor billing data | Primary data | Aggregated metrics; raw data available upon request |
 | SWE-bench Verified | Benchmark methodology | swebench.com, github.com/SWE-bench/SWE-bench |
 | Ship-Bench | SDLC benchmark | github.com/JAgostoni/ship-bench |
 | SpecBench (specification reasoning) | Spec benchmark | arxiv.org/html/2605.30314 |
@@ -539,8 +539,8 @@ Cost-efficiency metrics below use the **estimated total team AI cost** (~$20K) �
 ## Appendix A: Terminology
 | Term | Definition |
 |------|-----------|
-| **LLMGen SDLC** | A new AI software engineering system lifecycle that orchestrates the entire development journey from use-case analysis through deployment-ready artifacts. It comprises 6 managed workflows (Greenfield 14 steps, Brownfield 14 steps, Addon 13 steps, Use Case Analysis 11 steps, E2E Testing, DevOps E2E) with human-coordinated parallelism. It is the process used to build the the data management platform platform. |
-| **the data management platform** | a production Kubernetes-native data mesh platform — a production enterprise data mesh platform, the system built using LLMGen SDLC. A production enterprise data mesh platform built using LLMGen SDLC. |
+| **LLMGen SDLC** | A new AI software engineering system lifecycle that orchestrates the entire development journey from use-case analysis through deployment-ready artifacts. It comprises 6 managed workflows (Greenfield 14 steps, Brownfield 14 steps, Addon 13 steps, Use Case Analysis 11 steps, E2E Testing, DevOps E2E) with human-coordinated parallelism. It is the process used to build the the target platform platform. |
+| **the target platform** | a production Kubernetes-native platform (25+ microservices) — a production enterprise platform, the system built using LLMGen SDLC. A production enterprise platform built using LLMGen SDLC. |
 | **Feature** | A complete project or addon that enters the LLMGen workflow (= 1 commit set merged to main) |
 | **Issue/Requirement** | A single REQ-xxx, FR-xxx, or BR-xxx identifier in a requirements.md file |
 | **SWE-bench instance** | One GitHub issue requiring a code patch |
@@ -551,10 +551,9 @@ Cost-efficiency metrics below use the **estimated total team AI cost** (~$20K) �
 | **3rd-party fork** | Unvendored open-source project (no vendor support) managed via LLMGen brownfield analysis + addon workflow (e.g., DR-Containers, YAAG-Core, Strimzi forks) |
 | **LLMGen DevOps** | The DevOps E2E workflow that manages the deployment route from development through verified, deployment-ready artifacts (Docker images, Helm charts) |
 
-## Appendix B: Billing Data File
+## Appendix B: Billing Data
 
-The complete Cursor billing export is available at:
-`docs/comparisons/cursor-usage-billing-2026-02-to-06.csv`
+Cursor billing data (11,139 API requests, $12,984 total cost) was exported from the team billing dashboard. Aggregated metrics are presented throughout this document. Raw data is available upon request.
 
 Fields: Date, User, Cloud Agent ID, Automation ID, Kind, Model, Max Mode, Input (w/ Cache Write), Input (w/o Cache Write), Cache Read, Output Tokens, Total Tokens, Cost
 
