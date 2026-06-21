@@ -331,7 +331,7 @@ vs: $150M+ traditional development (1,000 operators × 2 devs × 6 months)
 ### 8.2 Applicable Domains
 | Domain | Example | Why 1000× Applies |
 |--------|---------|-------------------|
-| **Telecom platform expansion** | Deploy the data management platform to 1,000 different customer configurations | Same operator pattern, different CRDs |
+| **Platform expansion** | Deploy the platform to 1,000 different customer configurations | Same operator pattern, different CRDs |
 | **Multi-tenant SaaS** | Generate tenant-specific operators for 1,000 enterprise customers | Template-driven, requirements differ per tenant |
 | **IoT fleet management** | Create device-type-specific controllers for 1,000 device classes | Same reconciliation pattern, different device specs |
 | **Microservice decomposition** | Break a monolith into 1,000 bounded-context services | Same SDLC per service, different domain logic |

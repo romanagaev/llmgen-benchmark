@@ -149,7 +149,7 @@ This document provides an empirical benchmark of LLMGen (Tier 1 — Cursor IDE +
 
 **Key Finding:** LLMGen Tier 1 operates at a scope that no existing benchmark fully captures. SWE-bench measures single-issue resolution; SDD benchmarks (Ship-Bench, SpecBench) measure single-feature workflows. LLMGen produces entire platform systems. We therefore construct a **composite benchmark** that maps LLMGen's output to equivalent SWE-bench/SDD units for fair comparison.
 
-**Context:** The system under development is the **the data management platform** (Analytics Network Data Management Platform) — a production enterprise telecom data mesh platform. LLMGen SDLC is a new AI software engineering system lifecycle purpose-built for this class of work: it orchestrates the entire journey from use-case analysis through deployment-ready artifacts using structured, multi-step workflows with human-coordinated parallelism. The benchmark measures LLMGen SDLC's effectiveness during the development of the data management platform.
+**Context:** The system under development is the **the data management platform** (a production Kubernetes-native data mesh platform) — a production enterprise data mesh platform. LLMGen SDLC is a new AI software engineering system lifecycle purpose-built for this class of work: it orchestrates the entire journey from use-case analysis through deployment-ready artifacts using structured, multi-step workflows with human-coordinated parallelism. The benchmark measures LLMGen SDLC's effectiveness during the development of the data management platform.
 
 ---
 
@@ -172,12 +172,12 @@ This document provides an empirical benchmark of LLMGen (Tier 1 — Cursor IDE +
 
 ### 2.3 Operator Attribution
 
-All work attributed to **roman.agaev@zhiongroup.com**:
-- 305 direct commits on main (all name variants: roman.agaev, roman-agaev, Agaev Roman — same email)
+All work attributed to the **primary LLMGen operator**:
+- 305 direct commits on main (all name variants: primary operator — same identity)
 - 108 CMS-automated commits (LLMGen workflow automation steps)
 - Sole Cursor billing account (11,139 requests, $12,984.01)
 - Duration: 117 days (Feb 16 – Jun 13, 2026) = 16.7 weeks
-- **Note:** Repository is multi-contributor (15+ developers). LOC and commit metrics reflect team output managed through LLMGen SDLC; billing reflects Roman's Cursor usage as the LLMGen operator coordinating the work.
+- **Note:** Repository is multi-contributor (15+ developers). LOC and commit metrics reflect team output managed through LLMGen SDLC; billing reflects the primary operator's Cursor usage as the LLMGen operator coordinating the work.
 
 ---
 
@@ -352,7 +352,7 @@ SWE-AGI measures 10³–10⁴ LOC system construction from specifications.
 
 ### 6.3 Cost-Efficiency Analysis
 
-**Important framing:** The $12,984 Cursor billing reflects Roman Agaev's **total AI usage across two repositories** during this period: platform-analysis (the data management platform platform, 69.3% of commits) and llm-generation-design (LLMGen platform itself, 30.7%). Therefore:
+**Important framing:** The $12,984 Cursor billing reflects the primary operator's **total AI usage across two repositories** during this period: platform-analysis (the data management platform platform, 69.3% of commits) and llm-generation-design (LLMGen platform itself, 30.7%). Therefore:
 
 - **Roman's AI cost attributed to platform-analysis: ~$9,000** (69.3% of $12,984, by commit ratio across repos)
 - **Roman's LOC share of platform-analysis: 44.1%** (11.5M insertions out of 26M total insertions)
@@ -386,7 +386,7 @@ Cost-efficiency metrics below use the **estimated total team AI cost** (~$20K) �
 
 ## 7. Billing Data Analysis
 
-### 7.1 Usage Summary (from cursor-usage-roman-agaev-2026-02-to-06.csv)
+### 7.1 Usage Summary (from cursor-usage-billing-2026-02-to-06.csv)
 | Metric | Value |
 |--------|-------|
 | **Period** | Feb 1, 2026 – Jun 13, 2026 (133 days) |
@@ -436,7 +436,7 @@ Cost-efficiency metrics below use the **estimated total team AI cost** (~$20K) �
 | **Scale** | Strong | 44 features, 6.8M LOC, $12,984 cost — sufficient sample size |
 | **Duration** | Strong | 117 days (16.7 weeks) — not a one-off experiment |
 | **Single-operator** | Both strength and limitation | Controls for consistency but limits generalizability |
-| **Real-world complexity** | Strong | Production Kubernetes operators for the data management platform (enterprise telecom data mesh platform) |
+| **Real-world complexity** | Strong | Production Kubernetes operators for the data management platform (enterprise data mesh platform) |
 | **Cost transparency** | Strong | Full billing export with per-request granularity |
 
 ### 8.2 Limitations & Threats to Validity
@@ -519,7 +519,7 @@ Cost-efficiency metrics below use the **estimated total team AI cost** (~$20K) �
 | Source | Type | URL/Location |
 |--------|------|-------------|
 | platform-analysis repository | Primary data (the data management platform platform) | [internal repository] |
-| Cursor billing export | Primary data | `docs/comparisons/cursor-usage-roman-agaev-2026-02-to-06.csv` |
+| Cursor billing export | Primary data | `docs/comparisons/cursor-usage-billing-2026-02-to-06.csv` |
 | SWE-bench Verified | Benchmark methodology | swebench.com, github.com/SWE-bench/SWE-bench |
 | Ship-Bench | SDLC benchmark | github.com/JAgostoni/ship-bench |
 | SpecBench (specification reasoning) | Spec benchmark | arxiv.org/html/2605.30314 |
@@ -540,7 +540,7 @@ Cost-efficiency metrics below use the **estimated total team AI cost** (~$20K) �
 | Term | Definition |
 |------|-----------|
 | **LLMGen SDLC** | A new AI software engineering system lifecycle that orchestrates the entire development journey from use-case analysis through deployment-ready artifacts. It comprises 6 managed workflows (Greenfield 14 steps, Brownfield 14 steps, Addon 13 steps, Use Case Analysis 11 steps, E2E Testing, DevOps E2E) with human-coordinated parallelism. It is the process used to build the the data management platform platform. |
-| **the data management platform** | Analytics Network Data Management Platform — a production enterprise telecom data mesh platform, the system built using LLMGen SDLC. Originally named "the platform", rebranded to the data management platform. |
+| **the data management platform** | a production Kubernetes-native data mesh platform — a production enterprise data mesh platform, the system built using LLMGen SDLC. A production enterprise data mesh platform built using LLMGen SDLC. |
 | **Feature** | A complete project or addon that enters the LLMGen workflow (= 1 commit set merged to main) |
 | **Issue/Requirement** | A single REQ-xxx, FR-xxx, or BR-xxx identifier in a requirements.md file |
 | **SWE-bench instance** | One GitHub issue requiring a code patch |
@@ -554,7 +554,7 @@ Cost-efficiency metrics below use the **estimated total team AI cost** (~$20K) �
 ## Appendix B: Billing Data File
 
 The complete Cursor billing export is available at:
-`docs/comparisons/cursor-usage-roman-agaev-2026-02-to-06.csv`
+`docs/comparisons/cursor-usage-billing-2026-02-to-06.csv`
 
 Fields: Date, User, Cloud Agent ID, Automation ID, Kind, Model, Max Mode, Input (w/ Cache Write), Input (w/o Cache Write), Cache Read, Output Tokens, Total Tokens, Cost
 

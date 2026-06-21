@@ -127,8 +127,8 @@ Command: git shortlog -sn --all + git log --grep patterns
 | Metric | Count | Method |
 |--------|-------|--------|
 | Total commits (main) | 1,350 | `(git log --oneline).Count` |
-| Roman Agaev commits | 305 | `git log --author="roman.agaev@zhiongroup.com"` (email matches all name variants) |
-| CMS-automated commits | 108 | `git log --grep="[CMS]" --author="roman.agaev@zhiongroup.com"` |
+| Primary operator commits | 305 | `git log --author="[operator-email]"` (email matches all name variants) |
+| CMS-automated commits | 108 | `git log --grep="[CMS]" --author="[operator-email]"` |
 | Merge commits (features) | 263 | `git log --grep="Merge branch"` |
 | Addon merges | 24 | `git log --grep="Merge.*addon"` |
 | Use-case merges | 38 | `git log --grep="Merge.*usecase"` |
@@ -340,7 +340,7 @@ Scaled: (43/45) × 50 = 47.8/50
 | Feature support | 5 | All CRD types and reconciliation patterns specified |
 | Local simplicity | 3 | Complex operator pattern, but standard Kubernetes tooling |
 | Maintainability | 5 | Modern Go, well-structured, documented |
-| Scale path | 4 | Designed for enterprise telecom scale (the data management platform platform); cluster-scoped |
+| Scale path | 4 | Designed for enterprise scale (the data management platform platform); cluster-scoped |
 | Security | 5 | the organization compliance standards compliance built-in (enforced by LLMGen SDLC) |
 | Documentation | 5 | 162 architecture pages across platform |
 
@@ -610,7 +610,7 @@ LLMGen completion: 44/44 = 100% of entered workflows completed
 
 ### 7.1 Attribution Model
 
-**Critical framing:** The cost ($12,984) is the **Cursor AI billing for one LLMGen operator** (Roman Agaev). The LOC (6.8M) is the **total team output** (15+ developers working through LLMGen SDLC under operator coordination). Therefore:
+**Critical framing:** The cost ($12,984) is the **Cursor AI billing for one LLMGen operator** (the primary operator). The LOC (6.8M) is the **total team output** (15+ developers working through LLMGen SDLC under operator coordination). Therefore:
 
 - Roman's total Cursor billing: $12,984 (across TWO repos: platform-analysis 69.3% + llm-generation-design 30.7%)
 - Roman's AI cost attributed to platform-analysis: **~$9,000** (305/440 commits by repo ratio)
