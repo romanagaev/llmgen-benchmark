@@ -1,5 +1,6 @@
 # llmgen-benchmark
 
+[![Medium](https://img.shields.io/badge/Medium-Article-12100E?logo=medium&logoColor=white)](https://medium.com/@romanagaev/i-benchmarked-my-ai-engineering-platform-against-swe-bench-1b98b1592cc2)
 [![arXiv](https://img.shields.io/badge/arXiv-2025.XXXXX-b31b1b.svg)](https://arxiv.org/abs/2025.XXXXX)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Benchmark](https://img.shields.io/badge/benchmark-platform--level-blue.svg)](#)
@@ -185,6 +186,13 @@ Map your verification pipeline to the 4-tier model:
 | CI/CD generation | Jenkins, ArgoCD, FluxCD | No | No | No | No |
 | CMS coordination | Multi-developer | No | No | No | No |
 | Requirements sources | JIRA, Confluence, PDF | None | None | None | None |
+
+---
+
+## Publications
+
+- **Medium:** [I Benchmarked My AI Engineering Platform Against SWE-bench — Here's Why Existing Benchmarks Don't Apply Above Level 3](https://medium.com/@romanagaev/i-benchmarked-my-ai-engineering-platform-against-swe-bench-1b98b1592cc2)
+- **arXiv:** *(pending endorsement)*
 
 ---
 
