@@ -1,6 +1,8 @@
 # llmgen-benchmark
 
 [![Medium](https://img.shields.io/badge/Medium-Article-12100E?logo=medium&logoColor=white)](https://medium.com/@romanagaev/i-benchmarked-my-ai-engineering-platform-against-swe-bench-1b98b1592cc2)
+[![Dev.to](https://img.shields.io/badge/Dev.to-Article-0A0A0A?logo=devdotto&logoColor=white)](https://dev.to/romanagaev/i-built-an-ai-platform-that-delivers-333-loc-per-dollar-heres-how-i-benchmarked-it-1oao)
+[![Hashnode](https://img.shields.io/badge/Hashnode-Blog-2962FF?logo=hashnode&logoColor=white)](https://llmgen.hashnode.dev/i-built-an-ai-platform-that-delivers-333-loc-per-dollar-here-s-how-i-benchmarked-it)
 [![arXiv](https://img.shields.io/badge/arXiv-2025.XXXXX-b31b1b.svg)](https://arxiv.org/abs/2025.XXXXX)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Benchmark](https://img.shields.io/badge/benchmark-platform--level-blue.svg)](#)
@@ -192,6 +194,8 @@ Map your verification pipeline to the 4-tier model:
 ## Publications
 
 - **Medium:** [I Benchmarked My AI Engineering Platform Against SWE-bench — Here's Why Existing Benchmarks Don't Apply Above Level 3](https://medium.com/@romanagaev/i-benchmarked-my-ai-engineering-platform-against-swe-bench-1b98b1592cc2)
+- **Dev.to:** [I Built an AI Platform That Delivers 333 LOC Per Dollar — Here's How I Benchmarked It](https://dev.to/romanagaev/i-built-an-ai-platform-that-delivers-333-loc-per-dollar-heres-how-i-benchmarked-it-1oao)
+- **Hashnode:** [I Built an AI Platform That Delivers 333 LOC Per Dollar — Here's How I Benchmarked It](https://llmgen.hashnode.dev/i-built-an-ai-platform-that-delivers-333-loc-per-dollar-here-s-how-i-benchmarked-it)
 - **arXiv:** *(pending endorsement)*
 
 ---
