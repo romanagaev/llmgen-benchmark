@@ -205,11 +205,12 @@ Map your verification pipeline to the 4-tier model:
 If you use this methodology or data in your research, please cite:
 
 ```bibtex
-@article{agaev2025beyond,
+@misc{agaev2026beyond,
   title={Beyond SWE-bench: Benchmarking AI-Driven Platform Engineering at SDLC Scale},
   author={Agaev, Roman},
-  journal={arXiv preprint arXiv:2025.XXXXX},
-  year={2025}
+  year={2026},
+  howpublished={\url{https://github.com/romanagaev/llmgen-benchmark}},
+  note={Methodology and results available at GitHub repository}
 }
 ```
 
