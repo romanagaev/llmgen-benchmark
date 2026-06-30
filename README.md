@@ -193,7 +193,7 @@ Map your verification pipeline to the 4-tier model:
 
 ## Publications
 
-- **Medium:** [I Benchmarked My AI Engineering Platform Against SWE-bench — Here's Why Existing Benchmarks Don't Apply Above Level 3](https://medium.com/@romanagaev/i-benchmarked-my-ai-engineering-platform-against-swe-bench-1b98b1592cc2)
+- **Medium:** [I Benchmarked My AI Engineering Platform Against SWE-bench — Here's Why Existing Benchmarks Don't Apply Above Level 3](https://medium.com/@roman.agaev/i-benchmarked-my-ai-engineering-platform-against-swe-bench-heres-why-existing-benchmarks-don-t-1b98b1592ec2)
 - **Dev.to:** [I Built an AI Platform That Delivers 333 LOC Per Dollar — Here's How I Benchmarked It](https://dev.to/romanagaev/i-built-an-ai-platform-that-delivers-333-loc-per-dollar-heres-how-i-benchmarked-it-1oao)
 - **Hashnode:** [I Built an AI Platform That Delivers 333 LOC Per Dollar — Here's How I Benchmarked It](https://llmgen.hashnode.dev/i-built-an-ai-platform-that-delivers-333-loc-per-dollar-here-s-how-i-benchmarked-it)
 - **arXiv:** *(pending endorsement)*
